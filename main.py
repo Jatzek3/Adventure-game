@@ -1,7 +1,8 @@
 from hero import Hero
 from menu import Menu
-from locations import Start
-from engine import engine
+import locations
+from locations import Start, Lake, Dungeon, Shop, Locations
+
 
 if __name__ == "__main__":
 
@@ -9,3 +10,5 @@ if __name__ == "__main__":
     menu_object.welcome_screen()
     hero = menu_object.menu_screen()
     print(hero)
+    map = locations.Map
+    hero.go_to()
