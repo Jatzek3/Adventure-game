@@ -11,7 +11,6 @@ class Menu:
          """)
         time.sleep(1)
 
-
     def menu_screen(self):
         while True:
             print("""

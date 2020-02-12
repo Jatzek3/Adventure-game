@@ -9,7 +9,11 @@ class Hero():
         self.name = name
         self.hitpoints = hitpoints
         self.damage = damage
-        self.food = 100
+        self.food = 20
+        self.present_location =""
+        self.fishing_rod = False
+        self.axe = False
+        self.money = 5
 
     def go_to(self):
         """Method for choosing direction"""
@@ -17,7 +21,8 @@ class Hero():
         for i in locations.Map:
             print(i.name)
         choice = int(input())
-        locations.Map[choice].enter_location(self)
+        self.present_location = locations.Map[choice]
+        return self.present_location
 
     def fight(self, beast):
         """Logic behind fighting"""
@@ -37,15 +42,16 @@ class Hero():
                 pass
 
     def __str__(self):
-        return ("Name: "+ str(self.name)+
+        return ("Name: " + str(self.name) +
                 "\nHitpoints: " + str(self.hitpoints)
                 + "\nStrength: " + str(self.damage)
-                + "\nFood:" + str(self.food))
+                + "\nFood:" + str(self.food)
+                + "\nMoney"+ str(self.money))
 
     @staticmethod
     def hero_creator():
         name = input("Enter hero's name>>> ")
-        hero = Hero(name, 100, 10)
+        hero = Hero(name, 20, 5)
         return hero
 
 

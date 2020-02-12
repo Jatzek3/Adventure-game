@@ -13,4 +13,7 @@ if __name__ == "__main__":
     hero = menu_object.menu_screen()
     while True:
         hero.go_to()
-        locations.fi
+        hero.present_location.enter_location(hero)
+        hero.present_location.fight_enemies(hero)
+        hero.present_location.interact_NPC(hero)
+        print(hero)
