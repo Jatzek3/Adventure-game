@@ -25,7 +25,9 @@ class Locations():
         while self.enemies != []:
             hero.fight(self.enemies[0])
             if self.enemies[0].hitpoints <= 0:
-                hero.money += random.randint(0,2)
+                dropped = random.randint(0,2)
+                hero.money += dropped
+                print(f"Monster dropped {dropped} money")
                 self.enemies.remove(self.enemies[0])
         return self.enemies, hero.hitpoints, hero.money
 
@@ -39,23 +41,23 @@ class Start(Locations):
     def enter_location(self, hero):
         print("""The sun is shining, the weather is nice""")
         super().enter_location(hero)
-        rest_choice = input("Do you want to rest? Yes or no")
+        rest_choice = input("Do you want to rest? Yes or no >>>")
         while rest_choice:
             hero.hitpoints += 2
             hero.food -= 1
             print("You rest for some time")
-            rest_longer = input("Do you want to rest longer? Yes or no")
+            rest_longer = input("Do you want to rest longer? Yes or no >>>")
             if rest_longer.upper()  != "YES":
                 break
 
 class Lake(Locations):
     """Location inherits all methods from parent location + gives you description of itself"""
     def enter_location(self, hero):
-        print("You went for a stroll beside the lakeshore.")
         super().enter_location(hero)
-        if hero.fishing_rod == True:
+        print("You went for a stroll beside the lakeshore.")
+        if hero.fishing_rod:
             print("Now that you have fishing rod do you want to catch some fish?")
-            choice = input("yes or no")
+            choice = input("yes or no >>>")
             if choice.upper() == "YES" or "":
                 while True:
                     hero.food -= 1
@@ -66,9 +68,6 @@ class Lake(Locations):
                         pass
                     else:
                         break
-
-
-
 
 
 class Dungeon(Locations):

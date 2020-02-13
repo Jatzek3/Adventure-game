@@ -1,5 +1,6 @@
 import locations
 import creature
+import time
 
 
 class Hero():
@@ -17,7 +18,7 @@ class Hero():
 
     def go_to(self):
         """Method for choosing direction"""
-        print("Where do you want to go? Enter a number")
+        print("Where do you want to go? Enter a number ")
         for i in locations.Map:
             print(i.name)
         choice = int(input())
@@ -30,6 +31,7 @@ class Hero():
             print(f"You hit the creature for {self.damage} and it hit you for{beast.damage}")
             self.hitpoints = self.hitpoints - beast.damage
             beast.hitpoints = beast.hitpoints - self.damage
+            time.sleep(1)
             print(f" You have {self.hitpoints} hitpoints left")
             print(f"Creature have {beast.hitpoints} hitpoints left")
             if self.hitpoints <= 0:
