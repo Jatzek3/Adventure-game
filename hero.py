@@ -48,7 +48,7 @@ class Hero():
                 "\nHitpoints: " + str(self.hitpoints)
                 + "\nStrength: " + str(self.damage)
                 + "\nFood:" + str(self.food)
-                + "\nMoney"+ str(self.money))
+                + "\nMoney:"+ str(self.money))
 
     @staticmethod
     def hero_creator():

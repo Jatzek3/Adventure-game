@@ -14,9 +14,15 @@ class Menu:
     def menu_screen(self):
         while True:
             print("""
-                RPG!        
+        Greeting to my very simple RPG game the main goal of the game is to survive.
+        On the starting location you can rest giving you 2 hp but take 1 food
+        On Lake you can catch a fish for food if you have a rod
+        In the the Dungeon you can encounter monster witch will drop money
+        In the shop you can buy fishing rod, food or an axe
+        Have fuN!
+                
         1. Start a new game
-        3. Exit
+        2. Exit
         """)
             choice = input("Go ahead 1 or 2 . Then Press Enter> ")
             if choice == "1":
