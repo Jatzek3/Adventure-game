@@ -1,4 +1,5 @@
 Interesting Code -> https://github.com/Jatzek3/Adventure-game/blob/master/locations.py
+
                     https://github.com/Jatzek3/Adventure-game/blob/master/hero.py
 
 # Adventure Game
